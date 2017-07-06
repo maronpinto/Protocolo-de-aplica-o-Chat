@@ -4,14 +4,14 @@ from datetime import *
 MAX_BYTE = 65535
 
 def menu():
-
+	
 	os.system('clear')
 	print('                          CHAT                           ')
 	print('---------------------------------------------------------')
 	print(' 1-Chat  |  2-Listar  |  3-Nick   |  4-Status  |  0-Sair ')
 	print('---------------------------------------------------------\n')
-	opcao = input(' Operacao=> ')
-	return opcao
+	#opcao = input(' Operacao=> ')
+	#return opcao
 
 
 def servidor(port):
@@ -28,35 +28,28 @@ def servidor(port):
 
 		while True:
 			msg = data.recv(1024)
-
+			
 			if not msg: break
 
 			msg_lista = msg.decode('utf-8').split(',')
 
 			hora = datetime.now()
 			hora_grava = '{}:{}:{}'.format(hora.hour, hora.minute, hora.second)
-
+			
 			dia = date.today()
 			dia_grava = '{}/{}/{}'.format(str(dia.day), str(dia.month), str(dia.year))
 
 
 			if msg_lista[0] == '#REGISTRAR':
 				registro = {'nome': msg_lista[1], 'IP': address[0], 'dia': dia_grava, 'hora':hora_grava, 'mensagem': msg.decode('utf-8')}
-
+								
 				arq = open('chat.json', 'a')
 				arq.write(json.dumps(registro, indent=4))
 				arq.close()
 				print(msg.decode('utf-8'))
 
-				msg_ret = ' Nick {} registrado!'.format(msg_lista[1])
+				msg_ret = (msg_lista[1])
 				data.send(msg_ret.encode('utf-8'))
-
-
-
-
-
-
-
 
 		print(' Finalizando coneccao com o cliente {}'.format(address))
 		data.close()
@@ -65,30 +58,46 @@ def servidor(port):
 
 def cliente(port):
 	sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-	sock.connect(('10.25.2.142', port))
+	sock.connect(('127.0.0.1', port))
+	
+	#opcao = menu()
+	prompt = ''
+	menu()
+	opcao = input(' Operacao=> ')
 
-	opcao = menu()
+	controle = ''
+	if opcao == '0':
+		controle = '#QUIT'
 
-	while opcao != '#QUIT':
+	while controle != '#QUIT':
 
 		if opcao == '1':
 			nome = input(' Digite seu nome => ')
 			msg = '#REGISTRAR, ' + nome
-			print(msg)
+			sock.send(msg.encode('utf-8'))
+			retorno = sock.recv(1024)
+			prompt = retorno
+			
+
+		elif opcao == '2':
+			menu()
+			print(' Listagem dos usarios')
+			opcao = input(' Operacao=> ')
+			print(opcao)
 		elif opcao == '0':
-			msg = '#QUIT'
+			controle = '#QUIT'
+			break
 		else:
 			print('nao sei')
 
 
+		#sock.send(msg.encode('utf-8'))
+		
+		#print(msg)
 
-		sock.send(msg.encode('utf-8'))
-
-		print(msg)
-
-		retorno = sock.recv(1024)
-		print(retorno.decode('utf-8'))
-		opcao = input(' => ')
+		#retorno = sock.recv(1024)
+		#print(retorno.decode('utf-8'))
+		opcao = input('<' + prompt.decode('utf-8') + '> ')
 
 	sock.close()
 
