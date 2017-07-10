@@ -41,15 +41,30 @@ def servidor(port):
 
 
 			if msg_lista[0] == '#REGISTRAR':
-				registro = {'nome': msg_lista[1], 'IP': address[0], 'dia': dia_grava, 'hora':hora_grava, 'mensagem': msg.decode('utf-8')}
+
+
+				registro = [dict(nome=msg_lista[1], IP=address[0], dia=dia_grava, hora=hora_grava, mensagem=msg.decode('utf-8'))]
+				reg_gravar = {'chat':registro}
+				reg_gravar =  json.dumps(reg_gravar, indent=4)
 								
-				arq = open('chat.json', 'a')
-				arq.write(json.dumps(registro, indent=4))
+				arq = open('chat.json', 'w')
+				arq.write(reg_gravar)
 				arq.close()
+
 				print(msg.decode('utf-8'))
 
 				msg_ret = (msg_lista[1])
 				data.send(msg_ret.encode('utf-8'))
+
+			if msg_lista[0] == '#LIST':
+				arq = open('chat.json', 'r')
+				arq_json = json.load(arq)
+				for nome in arq_json['chat']:
+					texto = nome['nome']
+					sock.send(texto)
+					print(texto)
+					
+					
 
 		print(' Finalizando coneccao com o cliente {}'.format(address))
 		data.close()
@@ -82,8 +97,12 @@ def cliente(port):
 		elif opcao == '2':
 			menu()
 			print(' Listagem dos usarios')
+			msg = '#LIST'
+			sock.send(msg.encode('utf-8'))
+			retorno = sock.recv(1024)
 			opcao = input(' Operacao=> ')
-			print(opcao)
+			print(retorno)
+
 		elif opcao == '0':
 			controle = '#QUIT'
 			break
