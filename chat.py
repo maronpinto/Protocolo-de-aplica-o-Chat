@@ -59,14 +59,11 @@ def servidor(port):
 			if msg_lista[0] == '#LIST':
 				arq = open('chat.json', 'r')
 				arq_json = json.load(arq)
-				for nome in arq_json['chat']:
-					texto = nome['nome']
-					sock.send(texto)
-					print(texto)
-					
+				for item in arq_json['chat']:
+					data.send((item['nome'].encode('utf-8')))				
 					
 
-		print(' Finalizando coneccao com o cliente {}'.format(address))
+		print('Finalizando coneccao com o cliente {}'.format(address))
 		data.close()
 
 
@@ -99,9 +96,9 @@ def cliente(port):
 			print(' Listagem dos usarios')
 			msg = '#LIST'
 			sock.send(msg.encode('utf-8'))
-			retorno = sock.recv(1024)
-			opcao = input(' Operacao=> ')
-			print(retorno)
+			retorno = sock.recv(1024)			
+			print(retorno.decode('utf-8'))
+			
 
 		elif opcao == '0':
 			controle = '#QUIT'
