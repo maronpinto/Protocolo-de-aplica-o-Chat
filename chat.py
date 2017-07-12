@@ -10,9 +10,6 @@ def menu():
 	print('---------------------------------------------------------')
 	print(' 1-Chat  |  2-Listar  |  3-Nick   |  4-Status  |  0-Sair ')
 	print('---------------------------------------------------------\n')
-	#opcao = input(' Operacao=> ')
-	#return opcao
-
 
 def servidor(port):
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -42,10 +39,13 @@ def servidor(port):
 
 			if msg_lista[0] == '#REGISTRAR':
 
+				registro = dict(nome=msg_lista[1], IP=address[0], dia=dia_grava, hora=hora_grava, mensagem=msg.decode('utf-8'))
 
-				registro = [dict(nome=msg_lista[1], IP=address[0], dia=dia_grava, hora=hora_grava, mensagem=msg.decode('utf-8'))]
-				reg_gravar = {'chat':registro}
-				reg_gravar =  json.dumps(reg_gravar, indent=4)
+				reg_json = open('chat.json', 'r')
+				reg_str = json.load(reg_json)
+				reg_str['chat'].append(registro)
+
+				reg_gravar = json.dumps(reg_str, indent=4)
 								
 				arq = open('chat.json', 'w')
 				arq.write(reg_gravar)
@@ -59,8 +59,11 @@ def servidor(port):
 			if msg_lista[0] == '#LIST':
 				arq = open('chat.json', 'r')
 				arq_json = json.load(arq)
+				ret_lista = []
 				for item in arq_json['chat']:
-					data.send((item['nome'].encode('utf-8')))				
+					ret_lista.append(item['nome'])
+							
+				data.send(str(ret_lista).encode('utf-8'))
 					
 
 		print('Finalizando coneccao com o cliente {}'.format(address))
@@ -71,8 +74,7 @@ def servidor(port):
 def cliente(port):
 	sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 	sock.connect(('127.0.0.1', port))
-	
-	#opcao = menu()
+
 	prompt = ''
 	menu()
 	opcao = input(' Operacao=> ')
@@ -89,7 +91,6 @@ def cliente(port):
 			sock.send(msg.encode('utf-8'))
 			retorno = sock.recv(1024)
 			prompt = retorno
-			
 
 		elif opcao == '2':
 			menu()
@@ -97,7 +98,8 @@ def cliente(port):
 			msg = '#LIST'
 			sock.send(msg.encode('utf-8'))
 			retorno = sock.recv(1024)			
-			print(retorno.decode('utf-8'))
+			for nome in retorno:
+				print(nome)
 			
 
 		elif opcao == '0':
@@ -106,19 +108,9 @@ def cliente(port):
 		else:
 			print('nao sei')
 
-
-		#sock.send(msg.encode('utf-8'))
-		
-		#print(msg)
-
-		#retorno = sock.recv(1024)
-		#print(retorno.decode('utf-8'))
 		opcao = input('<' + prompt.decode('utf-8') + '> ')
 
 	sock.close()
-
-
-
 
 if __name__ == '__main__':
 	choices = {'cliente':cliente, 'servidor':servidor}
@@ -130,7 +122,3 @@ if __name__ == '__main__':
 	function = choices[args.definicao]
 	function(args.p)
 
-
-#print(menu())
-#servidor(5000)
-#cliente(5000)
