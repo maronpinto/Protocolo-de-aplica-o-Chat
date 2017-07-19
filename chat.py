@@ -11,6 +11,9 @@ def menu():
 	print(' 1-Chat  |  2-Listar  |  3-Nick   |  4-Status  |  0-Sair ')
 	print('---------------------------------------------------------\n')
 
+	#opcao = input('Opcao => ')
+	#return(opcao)
+
 def servidor(port):
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	sock.bind(('127.0.0.1', port))
@@ -75,10 +78,11 @@ def cliente(port):
 	sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 	sock.connect(('127.0.0.1', port))
 
-	prompt = ''
+	prompt = '<>'
 	menu()
-	opcao = input(' Operacao=> ')
 
+	opcao = input(' Operacao=> ')
+	
 	controle = ''
 	if opcao == '0':
 		controle = '#QUIT'
@@ -90,17 +94,22 @@ def cliente(port):
 			msg = '#REGISTRAR, ' + nome
 			sock.send(msg.encode('utf-8'))
 			retorno = sock.recv(1024)
-			prompt = retorno
+			prompt = retorno.decode('utf-8')
 
 		elif opcao == '2':
 			menu()
 			print(' Listagem dos usarios')
 			msg = '#LIST'
 			sock.send(msg.encode('utf-8'))
-			retorno = sock.recv(1024)			
-			for nome in retorno:
-				print(nome)
+			retorno = sock.recv(1024)	
+			ret_str = retorno.decode('utf-8')
+			#ret_list = (ret_str.join())
+			print(ret_str)
 			
+			#or item in range(0, len(ret_str)):
+			#	print(ret_str[item])
+			
+			prompt = ''
 
 		elif opcao == '0':
 			controle = '#QUIT'
@@ -108,8 +117,8 @@ def cliente(port):
 		else:
 			print('nao sei')
 
-		opcao = input('<' + prompt.decode('utf-8') + '> ')
-
+		opcao = input('<' + prompt + '> ')
+		
 	sock.close()
 
 if __name__ == '__main__':
