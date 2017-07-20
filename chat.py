@@ -42,11 +42,12 @@ def servidor(port):
 
 			if msg_lista[0] == '#REGISTRAR':
 
-				registro = dict(nome=msg_lista[1], IP=address[0], dia=dia_grava, hora=hora_grava, mensagem=msg.decode('utf-8'))
+				registro = dict(nome=msg_lista[1].strip(), IP=address[0], dia=dia_grava, hora=hora_grava, mensagem=msg.decode('utf-8'))
 
 				reg_json = open('chat.json', 'r')
 				reg_str = json.load(reg_json)
 				reg_str['chat'].append(registro)
+				reg_json.close()
 
 				reg_gravar = json.dumps(reg_str, indent=4)
 								
@@ -54,19 +55,39 @@ def servidor(port):
 				arq.write(reg_gravar)
 				arq.close()
 
-				print(msg.decode('utf-8'))
+				#print(msg.decode('utf-8'))
 
 				msg_ret = (msg_lista[1])
+
+
+
+				reg_usuario_nome = dict(nome=msg_lista[1].strip())
+
+
+				reg_usuario = open('reg_usuario.json', 'r')
+				reg_usuario_txt = json.load(reg_usuario)
+				reg_usuario.close()
+				print(reg_usuario_txt['nomes'][1]['nome'])
+				
+				'''
+				reg_usuario = open('reg_usuario.json', 'w')
+
+				reg_usuario.write(json.dumps(reg_usuario_nome, indent=4))
+				reg_usuario.close()
+				'''		
+
+
 				data.send(msg_ret.encode('utf-8'))
 
 			if msg_lista[0] == '#LIST':
 				arq = open('chat.json', 'r')
 				arq_json = json.load(arq)
-				ret_lista = []
+
+				ret = ''
 				for item in arq_json['chat']:
-					ret_lista.append(item['nome'])
-							
-				data.send(str(ret_lista).encode('utf-8'))
+					ret = ret + ',' + item['nome']
+
+				data.send(str(ret.lstrip(',')).encode('utf-8'))
 					
 
 		print('Finalizando coneccao com o cliente {}'.format(address))
@@ -96,18 +117,19 @@ def cliente(port):
 			retorno = sock.recv(1024)
 			prompt = retorno.decode('utf-8')
 
+
 		elif opcao == '2':
 			menu()
 			print(' Listagem dos usarios')
 			msg = '#LIST'
 			sock.send(msg.encode('utf-8'))
-			retorno = sock.recv(1024)	
+			retorno = sock.recv(1024)
+
 			ret_str = retorno.decode('utf-8')
-			#ret_list = (ret_str.join())
-			print(ret_str)
-			
-			#or item in range(0, len(ret_str)):
-			#	print(ret_str[item])
+			ret_list = (ret_str.split(','))
+
+			for nomes in range(0, len(ret_list)):
+				print(str(nomes + 1) + ' - ' + ret_list[nomes])
 			
 			prompt = ''
 

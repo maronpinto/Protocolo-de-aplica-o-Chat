@@ -1,340 +1,74 @@
 {
     "chat": [
         {
-            "nome": " rian",
+            "nome": "maron",
             "IP": "127.0.0.1",
-            "dia": "12/7/2017",
-            "hora": "17:13:54",
-            "mensagem": "#REGISTRAR, rian"
-        },
-        {
-            "nome": " pinto",
-            "IP": "127.0.0.1",
-            "dia": "12/7/2017",
-            "hora": "17:25:56",
-            "mensagem": "#REGISTRAR, pinto"
-        },
-        {
-            "nome": " ceia",
-            "IP": "127.0.0.1",
-            "dia": "12/7/2017",
-            "hora": "17:28:16",
-            "mensagem": "#REGISTRAR, ceia"
-        },
-        {
-            "nome": " dua",
-            "IP": "127.0.0.1",
-            "dia": "12/7/2017",
-            "hora": "17:37:18",
-            "mensagem": "#REGISTRAR, dua"
-        },
-        {
-            "nome": " titica",
-            "IP": "127.0.0.1",
-            "dia": "12/7/2017",
-            "hora": "17:45:33",
-            "mensagem": "#REGISTRAR, titica"
-        },
-        {
-            "nome": " maiza",
-            "IP": "127.0.0.1",
-            "dia": "12/7/2017",
-            "hora": "17:46:43",
-            "mensagem": "#REGISTRAR, maiza"
-        },
-        {
-            "nome": " painho",
-            "IP": "127.0.0.1",
-            "dia": "12/7/2017",
-            "hora": "17:52:45",
-            "mensagem": "#REGISTRAR, painho"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "14:47:11",
+            "dia": "20/7/2017",
+            "hora": "11:29:41",
             "mensagem": "#REGISTRAR, maron"
         },
         {
-            "nome": " maron",
+            "nome": "maron",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "14:48:8",
+            "dia": "20/7/2017",
+            "hora": "11:30:51",
             "mensagem": "#REGISTRAR, maron"
         },
         {
-            "nome": " maron",
+            "nome": "maron",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "14:48:43",
+            "dia": "20/7/2017",
+            "hora": "11:32:17",
             "mensagem": "#REGISTRAR, maron"
         },
         {
-            "nome": " maron",
+            "nome": "maron",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "14:52:58",
+            "dia": "20/7/2017",
+            "hora": "11:35:2",
             "mensagem": "#REGISTRAR, maron"
         },
         {
-            "nome": " maron",
+            "nome": "maron",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "14:56:36",
+            "dia": "20/7/2017",
+            "hora": "11:36:11",
             "mensagem": "#REGISTRAR, maron"
         },
         {
-            "nome": " maron",
+            "nome": "maron",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:2:8",
+            "dia": "20/7/2017",
+            "hora": "11:37:54",
             "mensagem": "#REGISTRAR, maron"
         },
         {
-            "nome": " maron",
+            "nome": "maron",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:4:36",
+            "dia": "20/7/2017",
+            "hora": "11:39:36",
             "mensagem": "#REGISTRAR, maron"
         },
         {
-            "nome": " maron",
+            "nome": "maorn",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:6:13",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:7:50",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:9:33",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:10:58",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:11:38",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:12:57",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:14:13",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:15:26",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:16:20",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:16:58",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:18:46",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:20:20",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "15:22:45",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:18:26",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:19:59",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:20:17",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maorn",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:20:47",
+            "dia": "20/7/2017",
+            "hora": "11:43:25",
             "mensagem": "#REGISTRAR, maorn"
         },
         {
-            "nome": " maron",
+            "nome": "asdf",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:21:19",
-            "mensagem": "#REGISTRAR, maron"
+            "dia": "20/7/2017",
+            "hora": "11:45:21",
+            "mensagem": "#REGISTRAR, asdf"
         },
         {
-            "nome": " maron",
+            "nome": "aefasd",
             "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:23:3",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:24:34",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:25:27",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:25:49",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:26:34",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:27:7",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:27:46",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:35:55",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:38:13",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:45:4",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:45:52",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:47:3",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " maron",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:47:55",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": " m",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:48:34",
-            "mensagem": "#REGISTRAR, m"
-        },
-        {
-            "nome": " m",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:49:25",
-            "mensagem": "#REGISTRAR, m"
-        },
-        {
-            "nome": " m",
-            "IP": "127.0.0.1",
-            "dia": "19/7/2017",
-            "hora": "16:49:53",
-            "mensagem": "#REGISTRAR, m"
+            "dia": "20/7/2017",
+            "hora": "11:46:32",
+            "mensagem": "#REGISTRAR, aefasd"
         }
     ]
 }
