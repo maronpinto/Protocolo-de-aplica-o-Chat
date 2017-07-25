@@ -3,6 +3,18 @@ from datetime import *
 
 MAX_BYTE = 65535
 
+def gravador(reg):
+	arq_json = open('chat.json', 'r')
+	arq_dict = json.load(arq_json)
+	arq_dict['chat'].append(reg)
+	arq_json.close()
+
+	reg_gravar = json.dumps(arq_dict, indent=4)
+								
+	arq_json = open('chat.json', 'w')
+	arq_json.write(reg_gravar)
+	arq_json.close()
+
 def menu():
 	
 	os.system('clear')
@@ -16,6 +28,7 @@ def menu():
 
 def servidor(port):
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 	sock.bind(('127.0.0.1', port))
 	sock.listen()
 	os.system('clear')
@@ -28,7 +41,7 @@ def servidor(port):
 
 		while True:
 			msg = data.recv(1024)
-			
+
 			if not msg: break
 
 			msg_lista = msg.decode('utf-8').split(',')
@@ -44,42 +57,18 @@ def servidor(port):
 
 				registro = dict(nome=msg_lista[1].strip(), IP=address[0], dia=dia_grava, hora=hora_grava, mensagem=msg.decode('utf-8'))
 
-				reg_json = open('chat.json', 'r')
-				reg_str = json.load(reg_json)
-				reg_str['chat'].append(registro)
-				reg_json.close()
+				gravador(registro)
 
-				reg_gravar = json.dumps(reg_str, indent=4)
-								
-				arq = open('chat.json', 'w')
-				arq.write(reg_gravar)
-				arq.close()
-
-				#print(msg.decode('utf-8'))
-
-				msg_ret = (msg_lista[1])
-
-
-
-				reg_usuario_nome = dict(nome=msg_lista[1].strip())
-
-
-				reg_usuario = open('reg_usuario.json', 'r')
-				reg_usuario_txt = json.load(reg_usuario)
-				reg_usuario.close()
-				print(reg_usuario_txt['nomes'][1]['nome'])
-				
-				'''
-				reg_usuario = open('reg_usuario.json', 'w')
-
-				reg_usuario.write(json.dumps(reg_usuario_nome, indent=4))
-				reg_usuario.close()
-				'''		
-
+				msg_ret = (msg_lista[1].strip())
 
 				data.send(msg_ret.encode('utf-8'))
 
 			if msg_lista[0] == '#LIST':
+
+				registro = dict(nome=msg_lista[1].strip(), IP=address[0], dia=dia_grava, hora=hora_grava, mensagem=msg.decode('utf-8'))
+				gravador(registro)
+
+
 				arq = open('chat.json', 'r')
 				arq_json = json.load(arq)
 
@@ -88,6 +77,20 @@ def servidor(port):
 					ret = ret + ',' + item['nome']
 
 				data.send(str(ret.lstrip(',')).encode('utf-8'))
+
+			if msg_lista[0] == '#NICK':
+
+				registro = dict(nome=msg_lista[1].strip(), IP=address[0], dia=dia_grava, hora=hora_grava, mensagem=msg.decode('utf-8'))
+				gravador(registro)
+								
+				arq_nick = open('chat.json', 'r')
+				arq_dict = json.load(arq_nick)
+
+				for item in arq_dict['chat']:
+					if item['nome'] == msg_lista[1]:
+						ret = item['nome']
+
+				data.send(ret.encode('utf-8'))
 					
 
 		print('Finalizando coneccao com o cliente {}'.format(address))
@@ -121,7 +124,9 @@ def cliente(port):
 		elif opcao == '2':
 			menu()
 			print(' Listagem dos usarios')
-			msg = '#LIST'
+			
+			msg = '#LIST, ' + prompt
+			
 			sock.send(msg.encode('utf-8'))
 			retorno = sock.recv(1024)
 
@@ -131,7 +136,15 @@ def cliente(port):
 			for nomes in range(0, len(ret_list)):
 				print(str(nomes + 1) + ' - ' + ret_list[nomes])
 			
-			prompt = ''
+		elif opcao == '3':
+			menu()
+			print(' Trocar nick')
+			nick = input(' Digite o novo nick=> ')
+			msg = '#NICK,' + nick
+			
+			sock.send(msg.encode('utf-8'))
+			retorno = sock.recv(1024)
+			prompt = retorno.decode('utf-8')
 
 		elif opcao == '0':
 			controle = '#QUIT'
