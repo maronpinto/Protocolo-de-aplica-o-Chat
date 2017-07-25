@@ -1,151 +1,116 @@
 {
     "chat": [
         {
-            "nome": "maron",
+            "nome": "0",
             "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:29:41",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": "maron",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:30:51",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": "maron",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:32:17",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": "maron",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:35:2",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": "maron",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:36:11",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": "maron",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:37:54",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": "maron",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:39:36",
-            "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": "maorn",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:43:25",
-            "mensagem": "#REGISTRAR, maorn"
-        },
-        {
-            "nome": "asdf",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:45:21",
-            "mensagem": "#REGISTRAR, asdf"
-        },
-        {
-            "nome": "aefasd",
-            "IP": "127.0.0.1",
-            "dia": "20/7/2017",
-            "hora": "11:46:32",
-            "mensagem": "#REGISTRAR, aefasd"
+            "dia": "25/7/2017",
+            "hora": "14:44:9",
+            "mensagem": "#MENSAGEM, 0"
         },
         {
             "nome": "maron",
             "IP": "127.0.0.1",
             "dia": "25/7/2017",
-            "hora": "8:51:12",
+            "hora": "14:44:51",
             "mensagem": "#REGISTRAR, maron"
-        },
-        {
-            "nome": "pinto",
-            "IP": "127.0.0.1",
-            "dia": "25/7/2017",
-            "hora": "9:38:55",
-            "mensagem": "#REGISTRAR, pinto"
         },
         {
             "nome": "maron",
             "IP": "127.0.0.1",
             "dia": "25/7/2017",
-            "hora": "10:50:28",
-            "mensagem": "#REGISTRAR, maron"
+            "hora": "14:44:55",
+            "mensagem": "#LIST, maron"
         },
         {
-            "nome": "rian",
+            "nome": "teste",
             "IP": "127.0.0.1",
             "dia": "25/7/2017",
-            "hora": "10:53:12",
-            "mensagem": "#REGISTRAR, rian"
-        },
-        {
-            "nome": "maron",
-            "IP": "127.0.0.1",
-            "dia": "25/7/2017",
-            "hora": "11:4:30",
-            "mensagem": "#LIST,maron"
+            "hora": "14:45:9",
+            "mensagem": "#MENSAGEM, teste"
         },
         {
             "nome": "<>",
             "IP": "127.0.0.1",
             "dia": "25/7/2017",
-            "hora": "11:20:35",
+            "hora": "15:6:36",
             "mensagem": "#LIST, <>"
         },
         {
-            "nome": "maron",
+            "nome": "<>",
             "IP": "127.0.0.1",
             "dia": "25/7/2017",
-            "hora": "11:20:52",
-            "mensagem": "#LIST, maron"
-        },
-        {
-            "nome": "maron",
-            "IP": "127.0.0.1",
-            "dia": "25/7/2017",
-            "hora": "11:21:3",
-            "mensagem": "#LIST, maron"
+            "hora": "15:12:29",
+            "mensagem": "#LIST, <>"
         },
         {
             "nome": "rian",
             "IP": "127.0.0.1",
             "dia": "25/7/2017",
-            "hora": "11:21:57",
-            "mensagem": "#LIST, rian"
-        },
-        {
-            "nome": "rian",
-            "IP": "127.0.0.1",
-            "dia": "25/7/2017",
-            "hora": "11:24:42",
+            "hora": "15:13:21",
             "mensagem": "#NICK,rian"
         },
         {
             "nome": "rian",
             "IP": "127.0.0.1",
             "dia": "25/7/2017",
-            "hora": "11:25:21",
+            "hora": "15:13:24",
             "mensagem": "#LIST, rian"
+        },
+        {
+            "nome": "rian",
+            "IP": "127.0.0.1",
+            "dia": "25/7/2017",
+            "hora": "15:16:33",
+            "mensagem": "#NICK,rian"
+        },
+        {
+            "nome": "rian",
+            "IP": "127.0.0.1",
+            "dia": "25/7/2017",
+            "hora": "15:16:42",
+            "mensagem": "#LIST, rian"
+        },
+        {
+            "nome": "rian",
+            "IP": "127.0.0.1",
+            "dia": "25/7/2017",
+            "hora": "15:16:54",
+            "mensagem": "#LIST, rian"
+        },
+        {
+            "nome": "2",
+            "IP": "127.0.0.1",
+            "dia": "25/7/2017",
+            "hora": "15:19:33",
+            "mensagem": "#NICK,2"
+        },
+        {
+            "nome": "2",
+            "IP": "127.0.0.1",
+            "dia": "25/7/2017",
+            "hora": "15:19:46",
+            "mensagem": "#LIST, 2"
+        },
+        {
+            "nome": "maron",
+            "IP": "127.0.0.1",
+            "dia": "25/7/2017",
+            "hora": "15:20:26",
+            "mensagem": "#NICK,maron"
+        },
+        {
+            "nome": "maron",
+            "IP": "127.0.0.1",
+            "dia": "25/7/2017",
+            "hora": "15:20:29",
+            "mensagem": "#LIST, maron"
+        },
+        {
+            "nome": "teste",
+            "IP": "127.0.0.1",
+            "dia": "25/7/2017",
+            "hora": "15:20:44",
+            "mensagem": "#MENSAGEM, teste"
         }
     ]
 }
